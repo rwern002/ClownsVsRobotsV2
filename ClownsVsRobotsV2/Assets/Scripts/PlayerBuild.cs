@@ -9,6 +9,7 @@ public class PlayerBuild : MonoBehaviour
     private bool isPlaced;
     private bool inArea;
     private GameObject planeSelected;
+    public GameObject towerPrefab;
     void Start()
     {
         isPlaced = false;
@@ -25,16 +26,30 @@ public class PlayerBuild : MonoBehaviour
             this.transform.position = Camera.main.ScreenToWorldPoint(cubePos);
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(towerPrefab);
+        }
+
         if (Input.GetMouseButtonDown(0) && isPlaced == false)
         {
-            Debug.Log("Mouse Down");
-            this.transform.position = new Vector3(this.transform.position.x, 5.7f, this.transform.position.z);
-            isPlaced = true;
+            if (inArea == true)
+            {
+                Debug.Log("Cannot Place Tower");
+            }
+
+            else
+            {
+                Debug.Log("Mouse Down");
+                this.transform.position = new Vector3(this.transform.position.x, 5.7f, this.transform.position.z);
+                isPlaced = true;
+            }
+            
         }
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Building")
         {
@@ -44,10 +59,10 @@ public class PlayerBuild : MonoBehaviour
         
     }
 
-    /*private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         Debug.Log("Exit the Area");
         inArea = false;
-    }*/
+    }
 
 }
