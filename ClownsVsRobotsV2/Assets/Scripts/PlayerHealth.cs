@@ -6,8 +6,12 @@ public class PlayerHealth : MonoBehaviour
 {
     public int startingHealth = 100;                            // The amount of health the player starts the game with.
     public int currentHealth;                                   // The current health the player has.
-    public Slider healthSlider;                                 // Reference to the UI's health bar.
+    GameObject HUDCanvas;
+    public Text scoreComponent;                                 // Reference to the UI's score.
+    public Text healthComponent;                                // Reference to the UI's health.
     public int score;
+
+    public GameObject blah;
 
     bool isDead;                                                // Whether the player is dead.
 
@@ -15,6 +19,9 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         // Set the initial health of the player.
+        HUDCanvas = GameObject.Find("HUDCanvas");
+        //scoreComponent = 
+        //healthComponent = GameObject.FindGameObjectWithTag("health");
         currentHealth = startingHealth;
         score = 0;
     }
@@ -22,7 +29,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        
+        // Set the health bar's value to the current health.
+        healthComponent.text = "Health: " + currentHealth.ToString() + " / " + startingHealth.ToString();
+        scoreComponent.text = "Score: " + score.ToString();
     }
 
 
@@ -30,9 +39,6 @@ public class PlayerHealth : MonoBehaviour
     {
         // Reduce the current health by the damage amount.
         currentHealth -= amount;
-
-        // Set the health bar's value to the current health.
-        healthSlider.value = currentHealth;
 
         // If the player has lost all it's health and the death flag hasn't been set yet...
         if (currentHealth <= 0 && !isDead)

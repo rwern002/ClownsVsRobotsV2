@@ -5,7 +5,7 @@ using System.Collections;
 public class EnemyAttack : MonoBehaviour
 {
     public int attackDamage = 10;               // The amount of health taken away per attack.
-
+    GameObject playerBase;
     GameObject player;                          // Reference to the player GameObject.
     PlayerHealth playerHealth;                  // Reference to the player's health.
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
@@ -15,33 +15,19 @@ public class EnemyAttack : MonoBehaviour
     void Awake()
     {
         // Setting up the references.
+        playerBase = GameObject.FindGameObjectWithTag("playerBase");
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
     }
 
-
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        // If the entering collider is the player...
-        if (other.gameObject == player)
+        if(collision.gameObject == playerBase)
         {
-            // ... the player is in range.
             playerInRange = true;
         }
     }
-
-
-    void OnTriggerExit(Collider other)
-    {
-        // If the exiting collider is the player...
-        if (other.gameObject == player)
-        {
-            // ... the player is no longer in range.
-            playerInRange = false;
-        }
-    }
-
 
     void Update()
     {
@@ -57,7 +43,7 @@ public class EnemyAttack : MonoBehaviour
     void Attack()
     {
         playerHealth.TakeDamage(attackDamage);
-        playerHealth.AddScore(enemyHealth.score);
+        //playerHealth.AddScore(enemyHealth.score);
         Destroy(gameObject);
     }
 }

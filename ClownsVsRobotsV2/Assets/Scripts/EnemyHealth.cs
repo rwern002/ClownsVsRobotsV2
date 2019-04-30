@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            playerHealth.AddScore(score);
+            //playerHealth.AddScore(score);
             Destroy(gameObject);
         }
     }

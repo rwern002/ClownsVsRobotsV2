@@ -18,7 +18,7 @@ public class spawnEnemy : MonoBehaviour
     void Update()
     {
     	spawn_timer++;
-    	Debug.Log(spawn_timer);
+    	//Debug.Log(spawn_timer);
     	if(spawn_timer >= spawn_time)
     	{
     		//spawn a new enemy

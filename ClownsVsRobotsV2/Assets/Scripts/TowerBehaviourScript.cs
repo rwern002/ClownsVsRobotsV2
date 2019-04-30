@@ -8,7 +8,7 @@ public class TowerBehaviourScript : MonoBehaviour
 	public int health;
 	public int attack_dmg;
 	public GameObject target;
-	private enemyBehaviourScript target_script;
+	private EnemyHealth target_script;
 	private int attack_timer;
 
 	// find a new target from the scenes
@@ -31,7 +31,7 @@ public class TowerBehaviourScript : MonoBehaviour
 		{
 			target = objects[index];
 			Debug.Log("found target");
-			target_script = target.GetComponent<enemyBehaviourScript>();
+			target_script = target.GetComponent<EnemyHealth>();
 		}
 		
 	}
