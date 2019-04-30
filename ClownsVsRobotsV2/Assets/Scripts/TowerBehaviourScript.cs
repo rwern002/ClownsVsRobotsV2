@@ -21,7 +21,7 @@ public class TowerBehaviourScript : MonoBehaviour
 		for(int i = 0; i < objects.Length; i++)
 		{
 			float dist = Vector3.Distance(objects[i].transform.position, transform.position);
-			if(dist < min_distance)
+			if(dist < min_distance && dist < 250)
 			{
 				min_distance = dist;
 				index = i;
@@ -46,7 +46,7 @@ public class TowerBehaviourScript : MonoBehaviour
     void Start()
     {
     	attack_timer = 0;
-    	attack_dmg = 50;
+    	attack_dmg = 10;
         //findTarget();
     }
 

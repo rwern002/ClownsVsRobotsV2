@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float speed;
+    public float speed;
     private Rigidbody rb;
     void Start()
     {
-        speed = 2f;
+        speed = 50f;
         rb = GetComponent<Rigidbody>();
     }
 
