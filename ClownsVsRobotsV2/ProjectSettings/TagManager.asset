@@ -6,6 +6,8 @@ TagManager:
   tags:
   - enemy
   - Building
+  - base
+  - playerBase
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - PostProcessing
   - Enemy Spheres
-  - 
+  - Player Sphere
   - 
   - 
   - 
