@@ -5,53 +5,95 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    bool paused = true;
-    bool gameStart = false;
+    public bool paused = true;
+    public bool gameStart = false;
+    public bool gameLoss = false;
+    public bool gameWin = false;
     public Transform canvas;
     public Transform MainMenu;
     public Transform UI;
+    public Transform WinMenu;
+    public Transform LossMenu;
+    public GameObject player;
+    public GameObject level;
+    public int num_enemy_types;
+
     void Start()
     {
         UI.gameObject.SetActive(false);
-        MainMenu.gameObject.SetActive(true);
         canvas.gameObject.SetActive(false);
-        Cursor.visible = true;
+        WinMenu.gameObject.SetActive(false);
+        LossMenu.gameObject.SetActive(false);
+        MainMenu.gameObject.SetActive(true);
         Time.timeScale = 0;
+        num_enemy_types = 2;
     }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space") && !gameStart)
+        if(!gameLoss && !gameWin)
         {
-            MainMenu.gameObject.SetActive(false);
-            Cursor.visible = false;
-            UI.gameObject.SetActive(true);
-            Time.timeScale = 1;
-            gameStart = true;
-        }
-        if (Input.GetKeyDown("space") && gameStart)
-        {
-            if (paused == false)
+            if(Input.GetKeyDown("space") && !gameStart)
             {
+                MainMenu.gameObject.SetActive(false);
+                UI.gameObject.SetActive(true);
+                Time.timeScale = 1;
+                gameStart = true;
+            }
+            if (Input.GetKeyDown("space") && gameStart)
+            {
+                if (paused == false)
+                {
+                    paused = true;
+                    canvas.gameObject.SetActive(true);
+                    Time.timeScale = 0;
+                }
+                else
+                {
+                    paused = false;
+                    canvas.gameObject.SetActive(false);
+                    Time.timeScale = 1;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (paused && gameStart)
+                {
+                    RestartGame();
+                }
+            }
+        }
+        //loss condition
+        if (player.GetComponent<PlayerHealth>().currentHealth <= 0 && gameStart && !gameLoss && !gameWin)
+        {
+            gameLoss = true;
+            gameStart = false;
+            paused = true;
+            LossMenu.gameObject.SetActive(true);
+            UI.gameObject.SetActive(false);
+            Time.timeScale = 0;
+        }
+        if (Input.GetKeyDown("space") && gameLoss)
+        {
+            RestartGame();
+            gameLoss = false;
+        }
+        if (!(level.GetComponent<spawnEnemy>().isActive) && gameStart && !gameLoss && !gameWin)
+        {
+            if (!isEnemy())
+            {
+                gameWin = true;
+                gameStart = false;
                 paused = true;
-                canvas.gameObject.SetActive(true);
-                Cursor.visible = true;
+                WinMenu.gameObject.SetActive(true);
+                UI.gameObject.SetActive(false);
                 Time.timeScale = 0;
             }
-            else
-            {
-                paused = false;
-                canvas.gameObject.SetActive(false);
-                Cursor.visible = false;
-                Time.timeScale = 1;
-            }
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown("space") && gameWin)
         {
-            if (paused && gameStart)
-            {
-                RestartGame();
-            }
+            RestartGame();
+            gameWin = false;
         }
     }
     public void RestartGame()
@@ -59,9 +101,22 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameStart = false;
         UI.gameObject.SetActive(false);
-        MainMenu.gameObject.SetActive(true);
         canvas.gameObject.SetActive(false);
-        Cursor.visible = true;
+        WinMenu.gameObject.SetActive(false);
+        LossMenu.gameObject.SetActive(false);
+        MainMenu.gameObject.SetActive(true);
         Time.timeScale = 0;
+    }
+    bool isEnemy()
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("enemy");
+        if (objects.Length > num_enemy_types)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

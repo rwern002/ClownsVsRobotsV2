@@ -10,12 +10,13 @@ public class TowerBehaviourScript : MonoBehaviour
 	public GameObject target;
 	private EnemyHealth target_script;
 	private int attack_timer;
+    public GameObject MenuManager;
 
 	// find a new target from the scenes
 	void findTarget()
 	{
 		GameObject[] objects = GameObject.FindGameObjectsWithTag("enemy");
-		Debug.Log("num enemies: " + objects.Length);
+		//Debug.Log("num enemies: " + objects.Length);
 		float min_distance = 1000000.0F;
 		int index = -1;
 		for(int i = 0; i < objects.Length; i++)
@@ -48,24 +49,27 @@ public class TowerBehaviourScript : MonoBehaviour
     	attack_timer = 0;
     	attack_dmg = 10;
         //findTarget();
+        MenuManager = GameObject.FindGameObjectWithTag("MenuManager");
     }
 
     // Update is called once per frame
     void Update()
     {
-    	if(!target)
-    	{
-    		findTarget();
-    		attack_timer = 0;
-    	}
-    	else
-    	{
-    		attack_timer++;
-    		if(attack_timer == 20)
-    		{
-    			attack_timer = 0;
-    			attack();
-    		}
-    	}
+        if (!(MenuManager.GetComponent<MenuManager>().paused)) {
+    	    if(!target)
+    	    {
+    		    findTarget();
+    		    attack_timer = 0;
+    	    }
+    	    else
+    	    {
+    		    attack_timer++;
+    		    if(attack_timer == 20)
+    		    {
+    			    attack_timer = 0;
+    			    attack();
+    		    }
+    	    }
+        }
     }
 }
