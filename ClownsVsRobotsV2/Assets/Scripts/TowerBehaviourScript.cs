@@ -15,7 +15,7 @@ public class TowerBehaviourScript : MonoBehaviour
 	void findTarget()
 	{
 		GameObject[] objects = GameObject.FindGameObjectsWithTag("enemy");
-		Debug.Log("num enemies: " + objects.Length);
+		//Debug.Log("num enemies: " + objects.Length);
 		float min_distance = 1000000.0F;
 		int index = -1;
 		for(int i = 0; i < objects.Length; i++)
