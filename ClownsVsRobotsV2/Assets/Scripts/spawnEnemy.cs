@@ -18,7 +18,7 @@ public class spawnEnemy : MonoBehaviour
         spawn_time = 500;
         isActive = true;
         enemy_count = 0;
-        target_count = 1;
+        target_count = 50;
     }
 
     // Update is called once per frame
