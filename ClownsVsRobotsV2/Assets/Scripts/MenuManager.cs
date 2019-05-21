@@ -26,7 +26,6 @@ public class MenuManager : MonoBehaviour
         LossMenu.gameObject.SetActive(false);
         MainMenu.gameObject.SetActive(true);
         Time.timeScale = 0;
-        num_enemy_types = 2;
     }
     // Update is called once per frame
     void Update()
@@ -110,7 +109,8 @@ public class MenuManager : MonoBehaviour
     bool isEnemy()
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("enemy");
-        if (objects.Length > num_enemy_types)
+        Debug.Log("Num enemies" + objects.Length);
+        if (objects.Length > 0)
         {
             return true;
         }
