@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,14 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 601352422, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 601352423, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 601352424, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
       propertyPath: scoreComponent
       value: 
@@ -210,6 +202,14 @@ PrefabInstance:
     - target: {fileID: 931474150, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 601352422, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 601352423, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
@@ -301,6 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
+  num_enemies_spawned_on_death: 0
+  enemy_prefab: {fileID: 0}
 --- !u!114 &179822869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +317,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1000
   score: 10
+  num_enemies_spawned_on_death: 0
+  enemy_prefab: {fileID: 0}
 --- !u!1 &186978179
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,13 +741,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534682756dab045c58f68cc128fe1625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  enemy_count: 0
-  target_count: 0
+  spawn_threshold: 1
   spawn_time: 0
   enemy_prefab: {fileID: 7868159463794548305, guid: 4c9b352fc7576334c9a9da80280180ce,
     type: 3}
-  MenuManager: {fileID: 1866902822}
+  enemy2_prefab: {fileID: 2476538350965115069, guid: e712fdd2cd90942c3bc60272655615d9,
+    type: 3}
+  active: 0
+  num_spawns: 10
 --- !u!1 &458505993
 GameObject:
   m_ObjectHideFlags: 0
