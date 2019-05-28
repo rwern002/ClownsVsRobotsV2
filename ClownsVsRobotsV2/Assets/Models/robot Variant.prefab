@@ -184,6 +184,22 @@ MonoBehaviour:
   healthComponent: {fileID: 0}
   score: 0
   blah: {fileID: 0}
+--- !u!114 &3070626090198794051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540658426440059859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6dcbc717f627da4da9c368f4d0cead9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robot: {fileID: 1540658426440059859}
+  mCam: {fileID: 0}
+  tCamObject: {fileID: 0}
+  tCam: {fileID: 0}
 --- !u!1001 &1540658426440158469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,7 +209,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
       propertyPath: m_Name
-      value: robot
+      value: robot Variant
       objectReference: {fileID: 0}
     - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
       propertyPath: m_TagString

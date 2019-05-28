@@ -10,9 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public GameObject towerPrefab;
     public Animator robotMove;
     private BuildScript getSpawn;
-    //public Camera mCam;
-    //public GameObject tCamObject;
-    //public Camera tCam;
+    public GameObject robot;
+    public Camera mCam;
+    public GameObject tCamObject;
+    public Camera tCam;
+
     void Start()
     {
         speed = 50f;
@@ -27,13 +29,17 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(towerPrefab);
         }
 
-        /*if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
 
-            mCam.enabled = !mCam.enabled;
+            mCam.enabled = true;
+            mCam.gameObject.SetActive(true);
+            robot.GetComponent<PlayerMovement>().enabled = false;
             tCamObject.SetActive(false);
-            tCam.enabled = !tCam.enabled;
-        }*/
+            tCam.enabled = false;
+        }
+
+
     }
 
     // Update is called once per frame
