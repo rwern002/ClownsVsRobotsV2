@@ -4,14 +4,15 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 100;                            // The amount of health the player starts the game with.
-    public int currentHealth;                                   // The current health the player has.
+    public Transform healthBar;
+    
+    public float startingHealth = 100;                            // The amount of health the player starts the game with.
+    public float currentHealth;                                   // The current health the player has.
     GameObject HUDCanvas;
     public Text scoreComponent;                                 // Reference to the UI's score.
     public Text healthComponent;                                // Reference to the UI's health.
-    public int score;
+    public float score;
 
-    public GameObject blah;
 
     bool isDead;                                                // Whether the player is dead.
 
@@ -23,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         //scoreComponent = 
         //healthComponent = GameObject.FindGameObjectWithTag("health");
         currentHealth = startingHealth;
-        score = 0;
+        score = 50;
     }
 
 
@@ -39,6 +40,8 @@ public class PlayerHealth : MonoBehaviour
     {
         // Reduce the current health by the damage amount.
         currentHealth -= amount;
+
+        healthBar.localScale = new Vector3(currentHealth / startingHealth , 1.0f);
 
         // If the player has lost all it's health and the death flag hasn't been set yet...
         if (currentHealth <= 0 && !isDead)
