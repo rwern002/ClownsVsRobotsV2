@@ -166,6 +166,9 @@ MonoBehaviour:
   towerPrefab: {fileID: 9093388540398966435, guid: 7687e3de69d2a9344a325dbda02abe9b,
     type: 3}
   robotMove: {fileID: 1540658426449590373}
+  robot: {fileID: 0}
+  tCamObject: {fileID: 0}
+  tCam: {fileID: 0}
 --- !u!114 &601352424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,12 +181,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54739e71419ce1346aa60bef3288151a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   startingHealth: 100
   currentHealth: 0
   scoreComponent: {fileID: 0}
   healthComponent: {fileID: 0}
   score: 0
-  blah: {fileID: 0}
+--- !u!136 &9091165716628534108
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540658426440059859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &1540658426440158469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,14 +208,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
-      propertyPath: m_Name
-      value: robot
-      objectReference: {fileID: 0}
-    - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.79
@@ -254,6 +263,14 @@ PrefabInstance:
     - target: {fileID: 400054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
+      propertyPath: m_Name
+      value: robot Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
       propertyPath: m_Controller
