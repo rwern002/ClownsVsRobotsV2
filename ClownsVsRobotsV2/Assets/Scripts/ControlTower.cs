@@ -6,7 +6,7 @@ public class ControlTower : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject robot;
-    public Camera mCam;
+    private Camera mCam;
     public GameObject tCamObject;
     public Camera tCam;
     private bool firstCam;
@@ -16,6 +16,8 @@ public class ControlTower : MonoBehaviour
     void Start()
     {
         firstCam = true;
+        mCam = GetComponent<Camera>();
+        Debug.Log("mCam: " + mCam.name);
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class ControlTower : MonoBehaviour
         {
             GameObject bullet = Instantiate(projectile, new Vector3(this.transform.position.x + 2f, this.transform.position.y - 1f, this.transform.position.z), Quaternion.identity) as GameObject;
             Debug.Log("Bullet: " + bullet.transform.position);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 50);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 75);
         }
     }
 

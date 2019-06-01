@@ -124,26 +124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: robot Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
-        type: 3}
-      propertyPath: mCam
-      value: 
-      objectReference: {fileID: 1476698186}
-    - target: {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
-        type: 3}
-      propertyPath: tCamObject
-      value: 
-      objectReference: {fileID: 597647997}
-    - target: {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
-        type: 3}
-      propertyPath: tCam
-      value: 
-      objectReference: {fileID: 534669904}
-    - target: {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1540658426440030131, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -203,6 +183,14 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 601352421, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
+      propertyPath: m_Size.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 601352421, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
+      propertyPath: m_Center.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 601352423, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
       propertyPath: speed
       value: 10
@@ -250,6 +238,26 @@ PrefabInstance:
     - target: {fileID: 931474150, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
+        type: 3}
+      propertyPath: mCam
+      value: 
+      objectReference: {fileID: 1476698186}
+    - target: {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
+        type: 3}
+      propertyPath: tCamObject
+      value: 
+      objectReference: {fileID: 597647997}
+    - target: {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
+        type: 3}
+      propertyPath: tCam
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3070626090198794051, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
@@ -3233,6 +3241,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2752791064458504912, guid: 33784cb05edd83741af1a1bce6c3954f,
+        type: 3}
+      propertyPath: m_Name
+      value: turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752791064458504912, guid: 33784cb05edd83741af1a1bce6c3954f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1118008853080340519, guid: 33784cb05edd83741af1a1bce6c3954f,
         type: 3}
       propertyPath: robot
@@ -3248,22 +3266,6 @@ PrefabInstance:
       propertyPath: tCam
       value: 
       objectReference: {fileID: 534669904}
-    - target: {fileID: 1118008853080340519, guid: 33784cb05edd83741af1a1bce6c3954f,
-        type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 7793060212024707275, guid: aa369121997694f41aa143718e223d79,
-        type: 3}
-    - target: {fileID: 2752791064458504912, guid: 33784cb05edd83741af1a1bce6c3954f,
-        type: 3}
-      propertyPath: m_Name
-      value: turret
-      objectReference: {fileID: 0}
-    - target: {fileID: 2752791064458504912, guid: 33784cb05edd83741af1a1bce6c3954f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2752791064458606320, guid: 33784cb05edd83741af1a1bce6c3954f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3317,21 +3319,6 @@ PrefabInstance:
     - target: {fileID: 2752791064458606320, guid: 33784cb05edd83741af1a1bce6c3954f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3793704872198110205, guid: 33784cb05edd83741af1a1bce6c3954f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 3793704872198110205, guid: 33784cb05edd83741af1a1bce6c3954f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3793704872198110205, guid: 33784cb05edd83741af1a1bce6c3954f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3727,16 +3714,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9093388539869480439, guid: 7687e3de69d2a9344a325dbda02abe9b,
-        type: 3}
-      propertyPath: MenuManager
-      value: 
-      objectReference: {fileID: 1866902822}
     - target: {fileID: 9093388539869480438, guid: 7687e3de69d2a9344a325dbda02abe9b,
         type: 3}
       propertyPath: m_Constraints
       value: 94
       objectReference: {fileID: 0}
+    - target: {fileID: 9093388539869480439, guid: 7687e3de69d2a9344a325dbda02abe9b,
+        type: 3}
+      propertyPath: MenuManager
+      value: 
+      objectReference: {fileID: 1866902822}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7687e3de69d2a9344a325dbda02abe9b, type: 3}
 --- !u!1 &1625989005
@@ -4611,7 +4598,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robot: {fileID: 638549137}
-  mCam: {fileID: 1476698186}
   tCamObject: {fileID: 597647997}
   tCam: {fileID: 534669904}
   projectile: {fileID: 0}
@@ -4757,7 +4743,6 @@ MonoBehaviour:
   towerPrefab: {fileID: 0}
   robotMove: {fileID: 0}
   robot: {fileID: 0}
-  mCam: {fileID: 0}
   tCamObject: {fileID: 0}
   tCam: {fileID: 0}
 --- !u!114 &2105114288
