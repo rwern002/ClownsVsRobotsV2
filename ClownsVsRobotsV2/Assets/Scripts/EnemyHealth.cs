@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    //Animator anim;
+    //public GameObject clown;
+
     public int health = 1000;
     public int score = 10;
     public int num_enemies_spawned_on_death;
@@ -15,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         // Setting up the references.
+        //anim = GetComponent<Animator>();
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         gameObject.tag = "enemy";
@@ -26,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             playerHealth.AddScore(score);
+<<<<<<< HEAD
             if(enemy_prefab)
             {
                 for(int i = 0; i < num_enemies_spawned_on_death ; i++)
@@ -36,6 +42,10 @@ public class EnemyHealth : MonoBehaviour
                     Instantiate(enemy_prefab, pos, Quaternion.identity);
                 }
             }
+=======
+            //anim.SetBool("Dead",true);
+            //Destroy(gameObject, 3);
+>>>>>>> Jasiel
             Destroy(gameObject);
         }
     }
