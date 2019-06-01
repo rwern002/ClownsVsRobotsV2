@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class spawnEnemy : MonoBehaviour
 {
+<<<<<<< HEAD
     private int spawn_timer;
     public float spawn_threshold;
     public int spawn_time;
@@ -12,6 +13,11 @@ public class spawnEnemy : MonoBehaviour
     public bool active;
     public int num_spawns;
     private int total_spawn;
+=======
+	private int spawn_timer;
+	public int spawn_time;
+	public GameObject enemy_prefab;
+>>>>>>> parent of 968eb1c... Merge pull request #1 from rwern002/MenusUI
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +25,16 @@ public class spawnEnemy : MonoBehaviour
         spawn_threshold = 0.7f;
         spawn_timer = 0;
         spawn_time = 500;
+<<<<<<< HEAD
         total_spawn = 0;
+=======
+>>>>>>> parent of 968eb1c... Merge pull request #1 from rwern002/MenusUI
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         if(active)
         {
             spawn_timer++;
@@ -49,5 +59,15 @@ public class spawnEnemy : MonoBehaviour
                 }
             }
         }
+=======
+    	spawn_timer++;
+    	//Debug.Log(spawn_timer);
+    	if(spawn_timer >= spawn_time)
+    	{
+    		//spawn a new enemy
+    		Instantiate(enemy_prefab, new Vector3(189, -30, -65), Quaternion.identity);
+    		spawn_timer = 0;
+    	}
+>>>>>>> parent of 968eb1c... Merge pull request #1 from rwern002/MenusUI
     }
 }

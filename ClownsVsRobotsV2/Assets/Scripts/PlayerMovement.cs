@@ -9,16 +9,11 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
     private Rigidbody rb;
-    public GameObject towerPrefab;
-    public Animator robotMove;
-    private BuildScript getSpawn;
-    //public Camera mCam;
-    //public GameObject tCamObject;
-    //public Camera tCam;
     void Start()
     {
         speed = 20f;
         rb = GetComponent<Rigidbody>();
+<<<<<<< HEAD
         getSpawn = FindObjectOfType<BuildScript>();
     }
 
@@ -37,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
             tCamObject.SetActive(false);
             tCam.enabled = !tCam.enabled;
         }*/
+=======
+>>>>>>> parent of 968eb1c... Merge pull request #1 from rwern002/MenusUI
     }
 
     // Update is called once per frame
@@ -45,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         float horMove = Input.GetAxisRaw("Horizontal");
         float vertMove = Input.GetAxisRaw("Vertical");
 
+<<<<<<< HEAD
         if (vertMove < 0.0)
         {
             Debug.Log("Going Back");
@@ -80,6 +78,12 @@ public class PlayerMovement : MonoBehaviour
             robotMove.SetFloat("Speed", 0.0f);
         }
         transform.Translate(movement * Time.deltaTime * speed, Space.World);
+=======
+        Vector3 movement = new Vector3(horMove, 0.0f, vertMove);
+        movement = Camera.main.transform.TransformDirection(movement);
+        movement.y = 0.0f;
+        transform.Translate(movement * Time.deltaTime * speed);
+>>>>>>> parent of 968eb1c... Merge pull request #1 from rwern002/MenusUI
     }
 
 }
