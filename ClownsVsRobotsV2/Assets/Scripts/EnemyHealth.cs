@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    //Animator anim;
+    //public GameObject clown;
+
     public int health = 1000;
     public int score = 10;
     PlayerHealth playerHealth;                  // Reference to the player's health.
@@ -13,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         // Setting up the references.
+        //anim = GetComponent<Animator>();
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         gameObject.tag = "enemy";
@@ -24,6 +29,8 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             playerHealth.AddScore(score);
+            //anim.SetBool("Dead",true);
+            //Destroy(gameObject, 3);
             Destroy(gameObject);
         }
     }
