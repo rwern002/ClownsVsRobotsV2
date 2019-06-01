@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    //Animator anim;
-    //public GameObject clown;
-
     public int health = 1000;
     public int score = 10;
+    public int num_enemies_spawned_on_death;
+    public GameObject enemy_prefab;
     PlayerHealth playerHealth;                  // Reference to the player's health.
     GameObject player;                          // Reference to the player GameObject.
 
@@ -16,8 +15,6 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         // Setting up the references.
-        //anim = GetComponent<Animator>();
-
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         gameObject.tag = "enemy";
@@ -29,8 +26,16 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             playerHealth.AddScore(score);
-            //anim.SetBool("Dead",true);
-            //Destroy(gameObject, 3);
+            if(enemy_prefab)
+            {
+                for(int i = 0; i < num_enemies_spawned_on_death ; i++)
+                {
+                    float rand_x = Random.Range(-5.0f, 5.0f);
+                    float rand_z = Random.Range(-5.0f, 5.0f);
+                    Vector3 pos = new Vector3(transform.position.x + rand_x, transform.position.y, transform.position.z + rand_z);
+                    Instantiate(enemy_prefab, pos, Quaternion.identity);
+                }
+            }
             Destroy(gameObject);
         }
     }

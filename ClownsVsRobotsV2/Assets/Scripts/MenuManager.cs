@@ -77,7 +77,7 @@ public class MenuManager : MonoBehaviour
             RestartGame();
             gameLoss = false;
         }
-        if (!(level.GetComponent<spawnEnemy>().isActive) && gameStart && !gameLoss && !gameWin)
+        if (!(level.GetComponent<spawnEnemy>().active) && gameStart && !gameLoss && !gameWin)
         {
             if (!isEnemy())
             {

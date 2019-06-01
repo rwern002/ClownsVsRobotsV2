@@ -10,7 +10,8 @@ public class EnemyAttack : MonoBehaviour
     PlayerHealth playerHealth;                  // Reference to the player's health.
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
-
+    public int num_enemies_spawned_on_death;
+    public GameObject enemy_prefab;
 
     void Awake()
     {
@@ -44,6 +45,16 @@ public class EnemyAttack : MonoBehaviour
     {
         playerHealth.TakeDamage(attackDamage);
         //playerHealth.AddScore(enemyHealth.score);
+        if(enemy_prefab)
+        {
+            for(int i = 0; i < num_enemies_spawned_on_death ; i++)
+            {
+                float rand_x = Random.Range(-5.0f, 5.0f);
+                float rand_z = Random.Range(-5.0f, 5.0f);
+                Vector3 pos = new Vector3(transform.position.x + rand_x, transform.position.y, transform.position.z + rand_z);
+                Instantiate(enemy_prefab, pos, Quaternion.identity);
+            }
+        }
         Destroy(gameObject);
     }
 }

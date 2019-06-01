@@ -4,41 +4,49 @@ using UnityEngine;
 
 public class spawnEnemy : MonoBehaviour
 {
-    public bool isActive;
-    public int enemy_count;
-    public int target_count;
     private int spawn_timer;
-	public int spawn_time;
-	public GameObject enemy_prefab;
-    public GameObject MenuManager;
+    public float spawn_threshold;
+    public int spawn_time;
+    public GameObject enemy_prefab;
+    public GameObject enemy2_prefab; 
+    public bool active;
+    public int num_spawns;
+    private int total_spawn;
     // Start is called before the first frame update
     void Start()
     {
-    	spawn_timer = 0;
+        active = true;
+        spawn_threshold = 0.7f;
+        spawn_timer = 0;
         spawn_time = 500;
-        isActive = true;
-        enemy_count = 0;
-        target_count = 5;
+        total_spawn = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!(MenuManager.GetComponent<MenuManager>().paused) && isActive)
+        if(active)
         {
             spawn_timer++;
             //Debug.Log(spawn_timer);
-            if ((spawn_timer >= spawn_time) && (enemy_count < target_count))
+            if(spawn_timer >= spawn_time)
             {
                 //spawn a new enemy
-                Instantiate(enemy_prefab, new Vector3(189, -30, -65), Quaternion.identity);
+                float random = Random.Range(0.0f, 1.0f);
+                if(random < spawn_threshold)
+                {
+                    Instantiate(enemy_prefab, new Vector3(189, -30, -65), Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(enemy2_prefab, new Vector3(189, -30, -65), Quaternion.identity);
+                }
                 spawn_timer = 0;
-                ++enemy_count;
-            }
-            if(enemy_count >= target_count && isActive)
-            {
-                isActive = false;
-                Debug.Log("isActive set to false");
+                total_spawn++;
+                if(total_spawn >= num_spawns)
+                {
+                    active = false;
+                }
             }
         }
     }
