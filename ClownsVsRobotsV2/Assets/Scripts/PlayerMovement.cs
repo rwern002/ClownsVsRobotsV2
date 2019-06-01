@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.E) && getSpawn.spawnforPlayer == true)
         {
             Instantiate(towerPrefab);
