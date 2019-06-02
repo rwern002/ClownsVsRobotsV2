@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     {
         // Set the health bar's value to the current health.
         healthComponent.text = "Health: " + currentHealth.ToString() + " / " + startingHealth.ToString();
-        scoreComponent.text = "Score: " + score.ToString();
+        scoreComponent.text = "Money: " + score.ToString();
     }
 
 
