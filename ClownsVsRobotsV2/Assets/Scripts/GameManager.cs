@@ -85,6 +85,15 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void nextWave()
+    {
+        WinScreen.SetActive(false);
+        UIcanvas.SetActive(true);
+        Time.timeScale = 1.0f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
