@@ -2556,6 +2556,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7869562250451315609, guid: 33784cb05edd83741af1a1bce6c3954f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33784cb05edd83741af1a1bce6c3954f, type: 3}
 --- !u!1 &984210566
@@ -5760,7 +5765,7 @@ GameObject:
   - component: {fileID: 1953133924}
   - component: {fileID: 1953133923}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6161,13 +6166,21 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'WASD to move
 
     E to buy a small turret
 
-    Left Mouse Button to place down turret'
+    Left Mouse Button to place down turret
+
+    R to take control of a turret (if near one)
+
+    When in turret:
+
+    -Aim with mouse
+
+    -Left click to shoot'
 --- !u!222 &2085450115
 CanvasRenderer:
   m_ObjectHideFlags: 0
