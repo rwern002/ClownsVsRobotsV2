@@ -29,9 +29,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         money = GetComponent<PlayerHealth>().score;
-        if (Input.GetKeyDown(KeyCode.E) && getSpawn.spawnforPlayer == true && money >= 20)
+        if (Input.GetKeyDown(KeyCode.E) && getSpawn.spawnforPlayer == true && money >= 50)
         {
-            GetComponent<PlayerHealth>().SpendMoney(20);
+            GetComponent<PlayerHealth>().SpendMoney(50);
             Instantiate(towerPrefab);
         }
 

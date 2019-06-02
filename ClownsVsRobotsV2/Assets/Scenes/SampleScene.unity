@@ -2444,7 +2444,7 @@ PrefabInstance:
     - target: {fileID: 2752791064458606320, guid: 33784cb05edd83741af1a1bce6c3954f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.64
+      value: -6.49
       objectReference: {fileID: 0}
     - target: {fileID: 2752791064458606320, guid: 33784cb05edd83741af1a1bce6c3954f,
         type: 3}
@@ -4361,6 +4361,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: turretmini
       objectReference: {fileID: 0}
+    - target: {fileID: 9093388540398966435, guid: 7687e3de69d2a9344a325dbda02abe9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9093388540398602883, guid: 7687e3de69d2a9344a325dbda02abe9b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4374,7 +4379,7 @@ PrefabInstance:
     - target: {fileID: 9093388540398602883, guid: 7687e3de69d2a9344a325dbda02abe9b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 9.74
       objectReference: {fileID: 0}
     - target: {fileID: 9093388540398602883, guid: 7687e3de69d2a9344a325dbda02abe9b,
         type: 3}
@@ -6524,6 +6529,46 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MenuManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
+        type: 3}
+      propertyPath: UIcanvas
+      value: 
+      objectReference: {fileID: 1480355073}
+    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
+        type: 3}
+      propertyPath: PauseScreen
+      value: 
+      objectReference: {fileID: 1698243519}
+    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
+        type: 3}
+      propertyPath: StartScreen
+      value: 
+      objectReference: {fileID: 1815772870}
+    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
+        type: 3}
+      propertyPath: LossScreen
+      value: 
+      objectReference: {fileID: 1481372991}
+    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
+        type: 3}
+      propertyPath: WinScreen
+      value: 
+      objectReference: {fileID: 1274960984}
+    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
+        type: 3}
+      propertyPath: ControlScreen
+      value: 
+      objectReference: {fileID: 1707851913}
+    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
+        type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 437645525}
+    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 638549137}
     - target: {fileID: 4673194670505015458, guid: 49d8b4d99633dd14c852e16fafae53b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6579,45 +6624,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
-        type: 3}
-      propertyPath: UIcanvas
-      value: 
-      objectReference: {fileID: 1480355073}
-    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
-        type: 3}
-      propertyPath: PauseScreen
-      value: 
-      objectReference: {fileID: 1698243519}
-    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
-        type: 3}
-      propertyPath: StartScreen
-      value: 
-      objectReference: {fileID: 1815772870}
-    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
-        type: 3}
-      propertyPath: LossScreen
-      value: 
-      objectReference: {fileID: 1481372991}
-    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
-        type: 3}
-      propertyPath: WinScreen
-      value: 
-      objectReference: {fileID: 1274960984}
-    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
-        type: 3}
-      propertyPath: ControlScreen
-      value: 
-      objectReference: {fileID: 1707851913}
-    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
-        type: 3}
-      propertyPath: level
-      value: 
-      objectReference: {fileID: 437645525}
-    - target: {fileID: 4673194670505015459, guid: 49d8b4d99633dd14c852e16fafae53b8,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 638549137}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49d8b4d99633dd14c852e16fafae53b8, type: 3}

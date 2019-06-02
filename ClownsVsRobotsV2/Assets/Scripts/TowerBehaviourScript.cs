@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TowerBehaviourScript : MonoBehaviour
 {
-	public ParticleSystem laser;
+	public GameObject laser;
 
 	public int health;
 	public int attack_dmg;
@@ -43,11 +43,11 @@ public class TowerBehaviourScript : MonoBehaviour
 	{
 		//Added by Jasiel-------------------------------------------
 		//Doesn't seem to work yet
-		var emitParams = new ParticleSystem.EmitParams();
-        emitParams.startColor = Color.red;
-        emitParams.startSize = 0.5f;
-		Debug.Log("size" + emitParams.startSize);
-        laser.Emit(emitParams, 10);
+		//var emitParams = new ParticleSystem.EmitParams();
+        //emitParams.startColor = Color.red;
+        //emitParams.startSize = 0.5f;
+		//Debug.Log("size" + emitParams.startSize);
+        //laser.Emit(emitParams, 10);
 		//-----------------------------------------------------------
 
 		target_script.health -= attack_dmg;
@@ -57,6 +57,7 @@ public class TowerBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		laser.SetActive(false);
     	attack_timer = 0;
     	attack_dmg = 10;
         //findTarget();
@@ -70,11 +71,13 @@ public class TowerBehaviourScript : MonoBehaviour
         if (!(MenuManager.GetComponent<GameManager>().paused)) {
     	    if(!target)
     	    {
+				laser.SetActive(false);
     		    findTarget();
     		    attack_timer = 0;
     	    }
     	    else
     	    {
+				laser.SetActive(true);
     		    attack_timer++;
     		    if(attack_timer == 20)
     		    {

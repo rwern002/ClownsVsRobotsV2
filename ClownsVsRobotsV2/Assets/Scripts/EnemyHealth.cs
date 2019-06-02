@@ -26,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             playerHealth.AddScore(score);
+
             if(enemy_prefab)
             {
                 for(int i = 0; i < num_enemies_spawned_on_death ; i++)

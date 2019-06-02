@@ -19,6 +19,7 @@ public class PlayerBuild : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (isPlaced == false)
         {
             Vector3 cubePos = Input.mousePosition;
