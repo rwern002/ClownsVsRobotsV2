@@ -5042,10 +5042,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6698d85bd5e88bd44b680f074c21961e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaced: 0
   buildAni: {fileID: 1540658426449590373, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
     type: 3}
   spawnforPlayer: 0
   head: {fileID: 3811865653399191049}
+  money: 0
+  player: {fileID: 1540658426440059859, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af, type: 3}
 --- !u!1 &9093388540398966437
 GameObject:
   m_ObjectHideFlags: 0

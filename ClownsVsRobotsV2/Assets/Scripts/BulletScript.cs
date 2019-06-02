@@ -21,7 +21,9 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
+            Debug.Log("Hit Enemy");
             Destroy(this.gameObject);
+            other.gameObject.GetComponent<EnemyHealth>().health -= 20;
         }
     }
 }

@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float money;
-
     public float speed;
     private Rigidbody rb;
+
     public GameObject towerPrefab;
+    public GameObject tower2Prefab;
+
     private bool foundTower;
     public Animator robotMove;
     private BuildScript getSpawn;
@@ -18,26 +19,33 @@ public class PlayerMovement : MonoBehaviour
     public Camera tCam;
     private Camera cam;
 
+    public bool t1;
+    public bool t2;
+    private GameObject tow2;
+    private GameObject tow1;
+
+    public float money;
+
     void Start()
     {
         speed = 20f;
         rb = GetComponent<Rigidbody>();
         getSpawn = FindObjectOfType<BuildScript>();
         foundTower = false;
+        t1 = false;
+        t2 = false;
     }
 
     void Update()
     {
-        money = GetComponent<PlayerHealth>().score;
-        if (Input.GetKeyDown(KeyCode.E) && getSpawn.spawnforPlayer == true && money >= 50)
+        /*if (Input.GetKeyDown(KeyCode.E) && getSpawn.spawnforPlayer == true)
         {
-            GetComponent<PlayerHealth>().SpendMoney(50);
             Instantiate(towerPrefab);
-        }
+        }*/
+        money = GetComponent<PlayerHealth>().score;
 
         if (Input.GetKeyDown(KeyCode.R) && foundTower == true)
         {
-            Debug.Log("Pressed R");
             cam.enabled = true;
             cam.gameObject.SetActive(true);
             robot.GetComponent<PlayerMovement>().enabled = false;
@@ -45,6 +53,69 @@ public class PlayerMovement : MonoBehaviour
             tCam.enabled = false;
         }
 
+        if (tow1 != null)
+        {
+            if (tow1.GetComponent<BuildScript>().isPlaced == true)
+            {
+                tow1 = null;
+            }
+        }
+
+        if (tow2 != null)
+        {
+            if (tow2.GetComponent<BuildScript>().isPlaced == true)
+            {
+                tow2 = null;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) && money >= 50)
+        {
+            if (tow1 == null)
+            {
+                tow1 = Instantiate(towerPrefab);
+                tow1.SetActive(true);
+                t1 = true;
+                t2 = false;
+                if (tow2 != null)
+                {
+                    tow2.SetActive(false);
+                }
+            }
+
+            else
+            {
+                tow1.SetActive(true);
+                if (tow2 != null)
+                {
+                    tow2.SetActive(false);
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2) && money >= 70)
+        {
+            if (tow2 == null)
+            {
+                tow2 = Instantiate(tower2Prefab);
+                tow2.SetActive(true);
+                t1 = false;
+                t2 = true;
+                if (tow1 != null)
+                {
+                    tow1.SetActive(false);
+                }
+            }
+
+            else
+            {
+                tow2.SetActive(true);
+                if (tow1 != null)
+                {
+                    tow1.SetActive(false);
+                }
+            }
+        }
 
     }
 
@@ -93,13 +164,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "ControlT")
+        if (other.gameObject.tag == "TowerC")
         {
             Debug.Log("Tower Found: " + other.gameObject.name);
-            //Debug.Log("Camera Found: " + cam.name);
             cam = other.transform.GetChild(2).gameObject.GetComponent<Camera>();
             foundTower = true;
-            //Debug.Log("Camera: " + cam.gameObject.name);
         }
     }
 

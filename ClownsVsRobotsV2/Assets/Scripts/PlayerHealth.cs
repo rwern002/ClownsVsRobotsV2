@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         //scoreComponent = 
         //healthComponent = GameObject.FindGameObjectWithTag("health");
         currentHealth = startingHealth;
-        score = 50;
+        score = 100;
     }
 
 
