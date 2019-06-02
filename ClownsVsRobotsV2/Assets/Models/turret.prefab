@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2752791064458606320}
   - component: {fileID: 8481012916703883172}
+  - component: {fileID: 7552943614185376205}
   m_Layer: 0
   m_Name: turret
-  m_TagString: ControlT
+  m_TagString: TowerC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,8 +46,25 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4944613, y: 2.790988, z: 1.529493}
-  m_Center: {x: 0.01427412, y: 0.895494, z: -1.5657392}
+  m_Size: {x: 3.5207949, y: 2.790988, z: 4.1558537}
+  m_Center: {x: -0.103818655, y: 1, z: -0.053955793}
+--- !u!114 &7552943614185376205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752791064458504912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6698d85bd5e88bd44b680f074c21961e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  buildAni: {fileID: 1540658426449590373, guid: 2ec4aaa1ba1823f4c86694cb5e3a26af,
+    type: 3}
+  spawnforPlayer: 0
+  head: {fileID: 2752791064458504918}
 --- !u!1 &2752791064458504916
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +282,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -297,7 +315,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robot: {fileID: 0}
-  tCamObject: {fileID: 0}
-  tCam: {fileID: 0}
   projectile: {fileID: 7793060212024707275, guid: aa369121997694f41aa143718e223d79,
     type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - base
   - playerBase
   - MenuManager
+  - TowerC
   layers:
   - Default
   - TransparentFX

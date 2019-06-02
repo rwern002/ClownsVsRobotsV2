@@ -148,8 +148,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.6359618, y: 4.523846, z: 1}
+  m_Center: {x: 0.037620712, y: 1.7619228, z: 0}
+--- !u!136 &9091165716628534108
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540658426440059859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &601352423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,11 +176,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd17126a368c42f409df4e782a381f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
   towerPrefab: {fileID: 9093388540398966435, guid: 7687e3de69d2a9344a325dbda02abe9b,
     type: 3}
+  tower2Prefab: {fileID: 2752791064458504912, guid: 33784cb05edd83741af1a1bce6c3954f,
+    type: 3}
   robotMove: {fileID: 1540658426449590373}
-  robot: {fileID: 0}
+  robot: {fileID: 1540658426440059859}
   tCamObject: {fileID: 0}
   tCam: {fileID: 0}
 --- !u!114 &601352424
@@ -187,20 +203,6 @@ MonoBehaviour:
   scoreComponent: {fileID: 0}
   healthComponent: {fileID: 0}
   score: 0
---- !u!136 &9091165716628534108
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540658426440059859}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &1540658426440158469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,6 +210,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
+      propertyPath: m_Name
+      value: robot Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.79
@@ -264,22 +274,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
-      propertyPath: m_Name
-      value: robot Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 100054, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 80430bdeac8f50648a66853b340f0269, type: 2}
     - target: {fileID: 13700000, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9ddd09c2d95c209458056f52dc71c637, type: 2}
+    - target: {fileID: 9500000, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 80430bdeac8f50648a66853b340f0269, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d92e61aa5aed8054b8230dbf67b23050, type: 3}
 --- !u!1 &1540658426440059859 stripped

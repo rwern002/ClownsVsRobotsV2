@@ -6,7 +6,7 @@ public class BuildScript : MonoBehaviour
 {
     // Start is called before the first frame update
     //public GameObject sObj;
-    private bool isPlaced;
+    public bool isPlaced;
     private bool inArea;
     private GameObject planeSelected;
     public Animator buildAni;
@@ -58,20 +58,25 @@ public class BuildScript : MonoBehaviour
 
         if (isPlaced == true)
         {
-            if (getTarget.target != null)
+            if (this.gameObject.name == "turretmini(Clone)")
             {
-                //Debug.Log("Found Target");
-                head.transform.LookAt(getTarget.target.transform);
+                //Debug.Log("turret mini");
+                if (getTarget.target != null)
+                {
+                    //Debug.Log("Found Target");
+                    head.transform.LookAt(getTarget.target.transform);
+                }
             }
+                
         }
 
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Building")
+        if (other.gameObject.tag == "Building" || other.gameObject.tag == "TowerC")
         {
-            Debug.Log("Collision of Tower");
+            //Debug.Log("Collision of Tower");
             inArea = true;
         }
 
@@ -79,7 +84,7 @@ public class BuildScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit the Area");
+        //Debug.Log("Exit the Area");
         inArea = false;
     }
 

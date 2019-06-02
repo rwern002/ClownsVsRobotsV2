@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TowerBehaviourScript : MonoBehaviour
 {
-	public ParticleSystem laser;
+	//public ParticleSystem laser;
 
 	public int health;
 	public int attack_dmg;
@@ -47,7 +47,7 @@ public class TowerBehaviourScript : MonoBehaviour
         emitParams.startColor = Color.red;
         emitParams.startSize = 0.5f;
 		Debug.Log("size" + emitParams.startSize);
-        laser.Emit(emitParams, 10);
+        //laser.Emit(emitParams, 10);
 		//-----------------------------------------------------------
 
 		target_script.health -= attack_dmg;
