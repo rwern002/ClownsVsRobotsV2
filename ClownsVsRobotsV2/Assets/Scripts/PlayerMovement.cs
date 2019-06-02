@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float money;
+
     public float speed;
     private Rigidbody rb;
     public GameObject towerPrefab;
@@ -26,8 +28,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && getSpawn.spawnforPlayer == true)
+        money = GetComponent<PlayerHealth>().score;
+        if (Input.GetKeyDown(KeyCode.E) && getSpawn.spawnforPlayer == true && money >= 20)
         {
+            GetComponent<PlayerHealth>().SpendMoney(20);
             Instantiate(towerPrefab);
         }
 

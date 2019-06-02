@@ -66,7 +66,8 @@ public class TowerBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!(MenuManager.GetComponent<MenuManager>().paused)) {
+		//Changed to GameManager from MenuManager
+        if (!(MenuManager.GetComponent<GameManager>().paused)) {
     	    if(!target)
     	    {
     		    findTarget();

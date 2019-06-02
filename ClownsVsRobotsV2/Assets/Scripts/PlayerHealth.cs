@@ -56,6 +56,11 @@ public class PlayerHealth : MonoBehaviour
         score += amount;
     }
 
+    public void SpendMoney(int amount)
+    {
+        score -= amount;
+    }
+
     void Death()
     {
         // Set the death flag so this function won't be called again.
