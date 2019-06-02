@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject ControlScreen;
     public GameObject player;
     public GameObject level;
+    public int wave_number;
     public bool gameStart = false;
     public bool paused = false;
 
@@ -26,8 +27,7 @@ public class GameManager : MonoBehaviour
         WinScreen.SetActive(false);
         LossScreen.SetActive(false);
         UIcanvas.SetActive(false);
-        Time.timeScale = 0.0f; 
-
+        Time.timeScale = 0.0f;
         
     }
 
@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
         UIcanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        wave_number = 1; 
+
+        // GameObject spawner = level.GetComponent<spawnEnemy>();
+        set_spawn_params(wave_number);
     }
 
     public void helpMenu()
@@ -92,6 +96,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // GameObject spawner = level.GetComponent<spawnEnemy>();
+        wave_number++;
+        set_spawn_params(wave_number);
+        
     }
 
     // Update is called once per frame
@@ -126,6 +135,14 @@ public class GameManager : MonoBehaviour
                 Pause();
             }
         }
+    }
+
+    void set_spawn_params(int wave_num)
+    {
+        level.GetComponent<spawnEnemy>().active = true;
+        level.GetComponent<spawnEnemy>().spawn_threshold = 1.0f - ((wave_num - 1) * 0.1f);
+        level.GetComponent<spawnEnemy>().spawn_time = 500 - (20 * wave_num);
+        level.GetComponent<spawnEnemy>().num_spawns = 5 * wave_num;
     }
 
     bool isEnemy()

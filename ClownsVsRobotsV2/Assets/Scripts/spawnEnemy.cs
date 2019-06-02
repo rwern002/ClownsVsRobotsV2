@@ -46,6 +46,7 @@ public class spawnEnemy : MonoBehaviour
                 if(total_spawn >= num_spawns)
                 {
                     active = false;
+                    total_spawn = 0;
                 }
             }
         }

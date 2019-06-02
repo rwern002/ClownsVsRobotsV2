@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     public Text healthComponent;                                // Reference to the UI's health.
     public float score;
 
+    public GameObject GameManager;
+
 
     bool isDead;                                                // Whether the player is dead.
 
@@ -31,8 +33,9 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         // Set the health bar's value to the current health.
+        int wave = GameManager.GetComponent<GameManager>().wave_number;
         healthComponent.text = "Health: " + currentHealth.ToString() + " / " + startingHealth.ToString();
-        scoreComponent.text = "Score: " + score.ToString();
+        scoreComponent.text = "Wave: " + wave.ToString() + "  Score: " + score.ToString();
     }
 
 
