@@ -23,7 +23,7 @@ public class BulletScript : MonoBehaviour
         {
             Debug.Log("Hit Enemy");
             Destroy(this.gameObject);
-            other.gameObject.GetComponent<EnemyHealth>().health -= 20;
+            other.gameObject.GetComponent<EnemyHealth>().health -= 100;
         }
     }
 }

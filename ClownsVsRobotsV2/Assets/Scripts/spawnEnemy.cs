@@ -35,17 +35,18 @@ public class spawnEnemy : MonoBehaviour
                 float random = Random.Range(0.0f, 1.0f);
                 if(random < spawn_threshold)
                 {
-                    Instantiate(enemy_prefab, new Vector3(189, -30, -65), Quaternion.identity);
+                    Instantiate(enemy_prefab, new Vector3(210, -30, -55), Quaternion.identity);
                 }
                 else
                 {
-                    Instantiate(enemy2_prefab, new Vector3(189, -30, -65), Quaternion.identity);
+                    Instantiate(enemy2_prefab, new Vector3(210, -30, -55), Quaternion.identity);
                 }
                 spawn_timer = 0;
                 total_spawn++;
                 if(total_spawn >= num_spawns)
                 {
                     active = false;
+                    total_spawn = 0;
                 }
             }
         }

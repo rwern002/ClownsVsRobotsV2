@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public Camera tCam;
     private Camera cam;
 
+    private ControlTower getFirstCam;
+
     public bool t1;
     public bool t2;
     private GameObject tow2;
@@ -44,13 +46,15 @@ public class PlayerMovement : MonoBehaviour
         }*/
         money = GetComponent<PlayerHealth>().score;
 
-        if (Input.GetKeyDown(KeyCode.R) && foundTower == true)
+        if (Input.GetKeyDown(KeyCode.R) && foundTower == true && getFirstCam.inTower == false)
         {
             cam.enabled = true;
             cam.gameObject.SetActive(true);
             robot.GetComponent<PlayerMovement>().enabled = false;
             tCamObject.SetActive(false);
             tCam.enabled = false;
+            getFirstCam.firstCam = true;
+            getFirstCam.inTower = true;
         }
 
         if (tow1 != null)
@@ -167,6 +171,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "TowerC")
         {
             Debug.Log("Tower Found: " + other.gameObject.name);
+            getFirstCam = other.transform.GetChild(2).gameObject.GetComponent<ControlTower>();
+            Debug.Log("Control Tower: " + getFirstCam.name);
             cam = other.transform.GetChild(2).gameObject.GetComponent<Camera>();
             foundTower = true;
         }

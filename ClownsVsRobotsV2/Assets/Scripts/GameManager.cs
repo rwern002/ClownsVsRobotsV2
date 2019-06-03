@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public bool gameStart = false;
     public bool paused = false;
 
+    public int wave_number;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,6 @@ public class GameManager : MonoBehaviour
         UIcanvas.SetActive(false);
         Time.timeScale = 0.0f; 
 
-        
     }
 
     public void startGame()
@@ -39,6 +40,9 @@ public class GameManager : MonoBehaviour
         UIcanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        wave_number = 1; 
+
+        set_spawn_params(wave_number);
     }
 
     public void helpMenu()
@@ -92,6 +96,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        wave_number++;
+        set_spawn_params(wave_number);
     }
 
     // Update is called once per frame
@@ -140,5 +146,13 @@ public class GameManager : MonoBehaviour
         {
             return false;
         }
+    }
+
+    void set_spawn_params(int wave_num)
+    {
+        level.GetComponent<spawnEnemy>().active = true;
+        level.GetComponent<spawnEnemy>().spawn_threshold = 1.0f - ((wave_num - 1) * 0.1f);
+        level.GetComponent<spawnEnemy>().spawn_time = 500 - (20 * wave_num);
+        level.GetComponent<spawnEnemy>().num_spawns = 5 * wave_num;
     }
 }
