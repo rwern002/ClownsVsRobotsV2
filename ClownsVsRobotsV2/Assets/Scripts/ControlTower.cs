@@ -12,6 +12,7 @@ public class ControlTower : MonoBehaviour
     public bool firstCam;
     private float speed = 20.0f;
     public GameObject projectile;
+    public Texture2D crossHair;
 
     public GameObject head;
     public GameObject aim;
@@ -60,5 +61,16 @@ public class ControlTower : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Rotate(new Vector3(Input.GetAxis("Mouse Y") * 5f, Input.GetAxis("Mouse X") * 5f, 0) * Time.deltaTime * speed);
+    }
+
+    private void OnGUI()
+    {
+        float xMin = Screen.width - (Screen.width - Input.mousePosition.x) - ((crossHair.width) / 2);
+        float yMin = (Screen.height - Input.mousePosition.y) - ((crossHair.height - 70f) / 2);
+        if (Time.timeScale != 0)
+        {
+            GUI.DrawTexture(new Rect(xMin, yMin, crossHair.width, crossHair.height), crossHair);
+        }
+        
     }
 }

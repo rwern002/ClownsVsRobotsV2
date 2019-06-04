@@ -438,7 +438,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6dcbc717f627da4da9c368f4d0cead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstCam: 0
   projectile: {fileID: 7793060212024707275, guid: aa369121997694f41aa143718e223d79,
     type: 3}
+  crossHair: {fileID: 2800000, guid: 921b8e369b1f4eb488bef5e1a28b6343, type: 3}
   head: {fileID: 2752791064458504918}
   aim: {fileID: 2767559710583310508}
+  inTower: 0
