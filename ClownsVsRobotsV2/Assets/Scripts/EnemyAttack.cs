@@ -22,8 +22,19 @@ public class EnemyAttack : MonoBehaviour
         enemyHealth = GetComponent<EnemyHealth>();
     }
 
-    void OnCollisionEnter(Collision collision)
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("HALP");
+    //    if(collision.gameObject == playerBase)
+    //    {
+    //        Debug.Log("WE IN BOIS");
+    //        playerInRange = true;
+    //    }
+    //}
+
+    void OnTriggerEnter(Collider collision)
     {
+
         if(collision.gameObject == playerBase)
         {
             playerInRange = true;
