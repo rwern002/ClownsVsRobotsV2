@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
     {
         level.GetComponent<spawnEnemy>().active = true;
         level.GetComponent<spawnEnemy>().spawn_threshold = 1.0f - ((wave_num - 1) * 0.1f);
-        level.GetComponent<spawnEnemy>().spawn_time = 500 - (20 * wave_num);
-        level.GetComponent<spawnEnemy>().num_spawns = 5 * wave_num;
+        level.GetComponent<spawnEnemy>().spawn_time = Mathf.Max(500 - (100 * wave_num), 10);
+        level.GetComponent<spawnEnemy>().num_spawns = Mathf.Max(5, wave_num) * wave_num;
     }
 }
