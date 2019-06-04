@@ -85,12 +85,12 @@ PrefabInstance:
     - target: {fileID: 7868159463794548302, guid: 4c9b352fc7576334c9a9da80280180ce,
         type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 1.5142882
       objectReference: {fileID: 0}
     - target: {fileID: 7868159463794548302, guid: 4c9b352fc7576334c9a9da80280180ce,
         type: 3}
       propertyPath: m_Center.y
-      value: 0
+      value: -0.25714368
       objectReference: {fileID: 0}
     - target: {fileID: 7868159463794548302, guid: 4c9b352fc7576334c9a9da80280180ce,
         type: 3}
@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 7868159463794548302, guid: 4c9b352fc7576334c9a9da80280180ce,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.079361655
+      value: -0.07936163
       objectReference: {fileID: 0}
     - target: {fileID: 7868159463794548302, guid: 4c9b352fc7576334c9a9da80280180ce,
         type: 3}
@@ -129,6 +129,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7868159463794548305, guid: 4c9b352fc7576334c9a9da80280180ce,
         type: 3}
+    - target: {fileID: 3364747931644256229, guid: 4c9b352fc7576334c9a9da80280180ce,
+        type: 3}
+      propertyPath: getClown
+      value: 
+      objectReference: {fileID: 4571180686280150700}
     - target: {fileID: 217540139960049492, guid: 4c9b352fc7576334c9a9da80280180ce,
         type: 3}
       propertyPath: m_IsActive
@@ -138,6 +143,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548827299931181068, guid: 4c9b352fc7576334c9a9da80280180ce,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c9b352fc7576334c9a9da80280180ce, type: 3}
@@ -231,3 +241,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3414788e71c5a34484c0080819ea977, type: 3}
+--- !u!1 &4571180686280150700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5190633451056991864, guid: a3414788e71c5a34484c0080819ea977,
+    type: 3}
+  m_PrefabInstance: {fileID: 8608856096466649300}
+  m_PrefabAsset: {fileID: 0}
