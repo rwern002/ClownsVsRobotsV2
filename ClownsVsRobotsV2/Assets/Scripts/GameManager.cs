@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
             }
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && gameStart == true)
+        if(Input.GetKeyDown(KeyCode.Escape) && gameStart == true)
         {
             if(paused == true)
             {

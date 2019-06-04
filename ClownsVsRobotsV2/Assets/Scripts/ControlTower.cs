@@ -17,6 +17,8 @@ public class ControlTower : MonoBehaviour
     public GameObject aim;
     public bool inTower;
 
+    public Texture2D crossHair;
+
     void Awake()
     {
         firstCam = true;
@@ -55,6 +57,17 @@ public class ControlTower : MonoBehaviour
             Debug.Log("Bullet: " + bullet.transform.position);
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 200);
         }
+    }
+
+    private void OnGUI()
+    {
+        float xMin = Screen.width - (Screen.width - Input.mousePosition.x) - ((crossHair.width) / 2);
+        float yMin = (Screen.height - Input.mousePosition.y) - ((crossHair.height - 70f) / 2);
+        if (Time.timeScale != 0)
+        {
+            GUI.DrawTexture(new Rect(xMin, yMin, crossHair.width, crossHair.height), crossHair);
+        }
+
     }
 
     private void FixedUpdate()
